@@ -168,13 +168,14 @@
   .filter-btn[data-cat="protection"]  { background: #eef2f5; border-color: #8aadca; color: #2a5a7a; }
   .filter-btn[data-cat="cleansing"]   { background: #f5f0ff; border-color: #b0a0d0; color: #5a3a8a; }
   .filter-btn[data-cat="wealth"]      { background: #fff8e8; border-color: #d4a840; color: #7a5a10; }
-  .filter-btn[data-cat="love"]        { background: #fdf0f4; border-color: #e8a0b8; color: #8a3050; }
+  .filter-btn[data-cat="kohannya"]    { background: #fdf0f4; border-color: #e8a0b8; color: #8a3050; }
   .filter-btn[data-cat="intuition"]   { background: #f0eef8; border-color: #9080c0; color: #3a2878; }
   .filter-btn[data-cat="calm"]        { background: #eef5f8; border-color: #80b0c0; color: #2a5868; }
   .filter-btn[data-cat="healing"]     { background: #eef5ee; border-color: #78b080; color: #2a5a30; }
   .filter-btn[data-cat="success"]     { background: #fdf8e8; border-color: #d8b840; color: #705a10; }
   .filter-btn[data-cat="home"]        { background: #f5f0e8; border-color: #c0a878; color: #6a4a20; }
   .filter-btn[data-cat="grounding"]   { background: #f0ede8; border-color: #b09880; color: #5a3a28; }
+  .filter-btn[data-cat="beauty"]      { background: #fdf4f8; border-color: #e0a0c0; color: #8a2060; }
   .filter-btn.active { box-shadow: 0 4px 14px rgba(0,0,0,0.12); transform: translateY(-1px); }
   .filter-btn:not(.active):hover { transform: translateY(-2px); box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
 
@@ -297,13 +298,14 @@
   .cat-badge.protection  { background: #eef2f5; border-color: #8aadca; color: #2a5a7a; }
   .cat-badge.cleansing   { background: #f5f0ff; border-color: #b0a0d0; color: #5a3a8a; }
   .cat-badge.wealth      { background: #fff8e8; border-color: #d4a840; color: #7a5a10; }
-  .cat-badge.love        { background: #fdf0f4; border-color: #e8a0b8; color: #8a3050; }
+  .cat-badge.kohannya    { background: #fdf0f4; border-color: #e8a0b8; color: #8a3050; }
   .cat-badge.intuition   { background: #f0eef8; border-color: #9080c0; color: #3a2878; }
   .cat-badge.calm        { background: #eef5f8; border-color: #80b0c0; color: #2a5868; }
   .cat-badge.healing     { background: #eef5ee; border-color: #78b080; color: #2a5a30; }
   .cat-badge.success     { background: #fdf8e8; border-color: #d8b840; color: #705a10; }
   .cat-badge.home        { background: #f5f0e8; border-color: #c0a878; color: #6a4a20; }
   .cat-badge.grounding   { background: #f0ede8; border-color: #b09880; color: #5a3a28; }
+  .cat-badge.beauty      { background: #fdf4f8; border-color: #e0a0c0; color: #8a2060; }
 
   .card-desc {
     padding: 0 22px 16px;
@@ -446,13 +448,14 @@
       <button class="filter-btn" data-cat="protection"  onclick="filterHerbs('protection',  '🛡️ Захист')">🛡️ Захист</button>
       <button class="filter-btn" data-cat="cleansing"   onclick="filterHerbs('cleansing',   '✨ Очищення')">✨ Очищення</button>
       <button class="filter-btn" data-cat="wealth"      onclick="filterHerbs('wealth',      '💰 Достаток')">💰 Достаток</button>
-      <button class="filter-btn" data-cat="love"        onclick="filterHerbs('love',        '❤️ Любов')">❤️ Любов</button>
+      <button class="filter-btn" data-cat="kohannya"   onclick="filterHerbs('kohannya',     '❤️ Кохання')">❤️ Кохання</button>
       <button class="filter-btn" data-cat="intuition"   onclick="filterHerbs('intuition',   '🔮 Інтуїція')">🔮 Інтуїція</button>
       <button class="filter-btn" data-cat="calm"        onclick="filterHerbs('calm',        '🌙 Спокій')">🌙 Спокій</button>
       <button class="filter-btn" data-cat="healing"     onclick="filterHerbs('healing',     '🌿 Зцілення')">🌿 Зцілення</button>
       <button class="filter-btn" data-cat="success"     onclick="filterHerbs('success',     '🌞 Успіх')">🌞 Успіх</button>
       <button class="filter-btn" data-cat="home"        onclick="filterHerbs('home',        '🏡 Дім і родина')">🏡 Дім і родина</button>
       <button class="filter-btn" data-cat="grounding"   onclick="filterHerbs('grounding',   '🌍 Заземлення')">🌍 Заземлення</button>
+      <button class="filter-btn" data-cat="beauty"     onclick="filterHerbs('beauty','💄 Краса')">💄 Краса</button>
     </div>
     <div class="search-box">
       <span class="search-icon">🔍</span>
@@ -471,19 +474,20 @@ const catLabels = {
   protection: "🛡️ Захист",
   cleansing:  "✨ Очищення",
   wealth:     "💰 Достаток",
-  love:       "❤️ Любов",
+  kohannya:   "❤️ Кохання",
   intuition:  "🔮 Інтуїція",
   calm:       "🌙 Спокій",
   healing:    "🌿 Зцілення",
   success:    "🌞 Успіх",
   home:       "🏡 Дім і родина",
-  grounding:  "🌍 Заземлення"
+  grounding:  "🌍 Заземлення",
+  beauty:     "💄 Краса"
 };
 
 const herbs = [
   {
     name: "Омела", latin: "Viscum album", emoji: "🪴",
-    cats: ["protection", "love", "intuition", "healing"],
+    cats: ["protection", "kohannya", "intuition", "healing"],
     desc: "Священна рослина друїдів. Росте між небом і землею, тому вважається містком між світами. Одна з найпотужніших рослин захисту та магічного зцілення.",
     props: ["Захисна", "Містична", "Протизапальна", "Заспокійлива НС"],
     uses: [
@@ -522,7 +526,7 @@ const herbs = [
   },
   {
     name: "М'ята перцева", latin: "Mentha piperita", emoji: "🍃",
-    cats: ["cleansing", "healing", "success", "protection"],
+    cats: ["wealth", "cleansing", "healing", "success", "protection"],
     desc: "Трава свіжості та прискорення. Очищає розум і простір, прискорює магічну роботу та залучає успіх. У побуті — незамінна для травлення та голови.",
     props: ["Очисна", "Знеболювальна", "Тонізувальна", "Протимікробна"],
     uses: [
@@ -535,7 +539,7 @@ const herbs = [
   },
   {
     name: "Чебрець / Тим'ян", latin: "Thymus vulgaris", emoji: "🌱",
-    cats: ["protection", "cleansing", "healing", "love", "success"],
+    cats: ["protection", "cleansing", "healing", "kohannya", "success"],
     desc: "Трава відваги і сили духу. Стародавні воїни носили його для хоробрості. Потужний антисептик і один із найвсебічніших магічних помічників.",
     props: ["Антисептичний", "Відхаркувальний", "Зміцнює дух", "Захисний"],
     uses: [
@@ -574,7 +578,7 @@ const herbs = [
   },
   {
     name: "Лаванда", latin: "Lavandula angustifolia", emoji: "💜",
-    cats: ["calm", "love", "cleansing", "healing", "intuition"],
+    cats: ["calm", "kohannya", "cleansing", "beauty", "healing", "intuition"],
     desc: "Королева спокою. Знімає тривогу, покращує сон, притягує кохання. Одна з найуниверсальніших магічних трав — підходить для будь-якого ритуалу.",
     props: ["Заспокійлива", "Антисептична", "Нормалізує сон", "Відновлює нервову систему"],
     uses: [
@@ -587,7 +591,7 @@ const herbs = [
   },
   {
     name: "Календула", latin: "Calendula officinalis", emoji: "🌼",
-    cats: ["healing", "protection", "success", "home"],
+    cats: ["healing", "protection", "beauty", "success", "home"],
     desc: "Трава сонця та захисту. Охороняє від хвороб і лихих людей, залучає добрі сни і процвітання. Незамінна в цілительських практиках.",
     props: ["Протизапальна", "Ранозаживна", "Антибактеріальна", "Захисна"],
     uses: [
@@ -613,7 +617,7 @@ const herbs = [
   },
   {
     name: "Волошки", latin: "Centaurea cyanus", emoji: "💙",
-    cats: ["love", "intuition", "healing", "calm"],
+    cats: ["kohannya", "intuition", "healing", "calm", "beauty"],
     desc: "Трава Кентавра-цілителя. Ніжна блакитна красуня — символ кохання, вірності та ясного зору. Відкриває третє oko та пом'якшує серце.",
     props: ["Протизапальна очей", "Заспокійлива", "Сечогінна", "Освітлює зір"],
     uses: [
@@ -639,7 +643,7 @@ const herbs = [
   },
   {
     name: "Деревій (Тисячолистник)", latin: "Achillea millefolium", emoji: "🤍",
-    cats: ["healing", "love", "protection", "intuition"],
+    cats: ["healing", "kohannya", "protection", "intuition"],
     desc: "Трава Ахілла. Зупиняє кров і зцілює рани — і тілесні, і серцеві. Підсилює відчуття кохання і відкриває інтуїцію. Трава воїна-цілителя.",
     props: ["Кровоспинний", "Протизапальний", "Жовчогінний", "Відкриває серце"],
     uses: [
@@ -652,7 +656,7 @@ const herbs = [
   },
   {
     name: "Фіалка триколірна", latin: "Viola tricolor", emoji: "💜",
-    cats: ["love", "calm", "healing", "intuition"],
+    cats: ["kohannya", "calm", "healing", "intuition", "beauty"],
     desc: "Квітка Трійці. Символ кохання, вірності та ніжності. Зцілює серце та шкіру, відкриває шлях до справжнього почуття.",
     props: ["Відхаркувальна", "Протизапальна шкіри", "Сечогінна", "Заспокійлива"],
     uses: [
@@ -665,7 +669,7 @@ const herbs = [
   },
   {
     name: "Верес", latin: "Calluna vulgaris", emoji: "🌸",
-    cats: ["protection", "love", "success", "grounding"],
+    cats: ["protection", "kohannya", "success", "grounding"],
     desc: "Шотландська трава удачі. Верес охороняє від злих людей, притягує кохання і відкриває двері до удачі та процвітання.",
     props: ["Сечогінний", "Антисептичний", "Залучає удачу", "Захисний"],
     uses: [
@@ -717,7 +721,7 @@ const herbs = [
   },
   {
     name: "Розмарин", latin: "Rosmarinus officinalis", emoji: "🌲",
-    cats: ["protection", "cleansing", "wealth", "love", "success", "healing"],
+    cats: ["protection", "cleansing", "wealth", "kohannya", "success", "healing"],
     desc: "Трава пам'яті та вірності. «Розмарин для спогадів» — казала Офелія. Один із найвсебічніших магічних помічників: замінює будь-яку іншу траву в ритуалі.",
     props: ["Покращує пам'ять та концентрацію", "Антибактеріальний", "Стимулює кровообіг", "Антидепресивний"],
     uses: [
@@ -730,7 +734,7 @@ const herbs = [
   },
   {
     name: "Базилік", latin: "Ocimum basilicum", emoji: "🌿",
-    cats: ["wealth", "love", "protection", "success", "home"],
+    cats: ["wealth", "kohannya", "protection", "success", "home"],
     desc: "Трава царів і кохання. Назва від грецького «basileus» — цар. Залучає гроші, кохання і щастя в дім. Охоронець домашнього вогнища.",
     props: ["Антибактеріальний", "Спазмолітичний", "Залучає процвітання", "Тонізувальний"],
     uses: [
@@ -769,7 +773,7 @@ const herbs = [
   },
   {
     name: "Троянда", latin: "Rosa spp.", emoji: "🌹",
-    cats: ["love", "healing", "intuition", "calm", "home", "success"],
+    cats: ["kohannya", "beauty", "healing", "intuition", "calm", "home", "success"],
     desc: "Королева квітів і магії любові. Пелюстки троянди — найунiversальніший інгредієнт любовних ритуалів. Відкривають серцеву чакру та несуть вібрацію чистого кохання.",
     props: ["Антидепресивна", "Протизапальна", "Відкриває серце", "Заспокійлива"],
     uses: [
